@@ -1,0 +1,22 @@
+@startuml
+
+title Hello, design overkill
+
+class Greeting {
+    -name: String
+    +Greeting(name: String)
+    +sayHello(): String
+}
+
+class HelloApp {
+    +{static} main(args: String[]): void
+}
+
+HelloApp --> Greeting : creates
+
+note right of HelloApp
+  Date: 2024-08-07
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml

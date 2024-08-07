@@ -1,0 +1,38 @@
+@startuml
+
+title Hello Application Family, many years later
+
+class Greeting {
+    -name: String
+    +Greeting(name: String)
+    +sayHello(): String
+}
+
+class HelloCLIApp {
+    +{static} main(args: String[]): void
+}
+
+class HelloAndroidApp {
+}
+
+class HelloGUIApp {
+}
+
+class HelloWebApp {
+}
+
+class HelloChatbotApp {
+}
+
+HelloCLIApp --> Greeting : creates
+HelloGUIApp --> Greeting : creates
+HelloWebApp --> Greeting : creates
+HelloAndroidApp --> Greeting : creates
+HelloChatbotApp --> Greeting : creates
+
+note right of HelloApp
+  Date: 2024-08-07
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml

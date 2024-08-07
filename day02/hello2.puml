@@ -1,0 +1,20 @@
+@startuml
+
+title Hello, less simple design
+
+class Greeting {
+    +{static} sayHello(): String
+}
+
+class Hello {
+    +{static} main(args: String[]): void
+}
+
+Hello --> Greeting : uses
+
+note right of Hello
+  Date: 2024-08-07
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml
