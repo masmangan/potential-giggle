@@ -24,15 +24,16 @@ class HelloWebApp {
 class HelloChatbotApp {
 }
 
-HelloCLIApp --> Greeting : creates
-HelloGUIApp --> Greeting : creates
-HelloWebApp --> Greeting : creates
-HelloAndroidApp --> Greeting : creates
-HelloChatbotApp --> Greeting : creates
+HelloCLIApp ..> Greeting : creates
+HelloGUIApp ..> Greeting : creates
+HelloWebApp ..> Greeting : creates
+HelloAndroidApp ..> Greeting : creates
+HelloChatbotApp ..> Greeting : creates
 
-note right of HelloApp
-  Date: 2024-08-07
-  Email: marco.mangan@pucrs.br
+
+note right of Greeting
+  2024-08-07
+  marco.mangan@pucrs.br
 end note
 
 @enduml
