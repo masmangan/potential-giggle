@@ -1,0 +1,20 @@
+@startuml
+
+title Greeting Application
+
+class Greeting {
+    +sayHello(): String
+}
+
+class Main {
+    +{static} main(args: String[]): void
+}
+
+Main --> Greeting : uses
+
+note as N1
+  Date: 2024-08-14
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml
