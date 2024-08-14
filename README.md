@@ -19,3 +19,7 @@ POO 2024/II
 ## Day 04 ##
 
 ![Bee1000](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day04/bee1000.puml )
+
+![Bee1001](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day04/bee1001.puml )
+
+![Bee1002](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day04/bee1002.puml )

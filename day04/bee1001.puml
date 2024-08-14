@@ -1,0 +1,24 @@
+@startuml
+
+title Simple Calculator Application
+
+class Calculator {
+    -a: int
+    -b: int
+    +Calculator(a: int, b: int)
+    +getSum(): int
+}
+
+class Main {
+    +{static} main(args: String[]): void
+}
+
+Main --> Calculator : uses
+Main --> Scanner : uses
+
+note as N1
+  Date: 2024-08-14
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml

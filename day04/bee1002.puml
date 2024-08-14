@@ -1,0 +1,40 @@
+@startuml
+
+title Circle Area Calculation
+
+package java.util {
+    class Scanner {
+    }
+}
+
+package java.lang {
+    class IllegalArgumentException {
+    }
+
+    class Math {
+        +{static} pow(a: double, b: double): double
+    }
+}
+
+class Circle {
+    +{static} PI: double = 3.14159
+    -radius: double
+    +Circle(radius: double)
+    +getArea(): double
+}
+
+class Main {
+    +{static} main(args: String[]): void
+}
+
+Main --> Circle : uses
+Main --> Scanner : uses
+Circle --> IllegalArgumentException : throws
+Circle --> Math : uses
+
+note as N1
+  Date: 2024-08-14
+  Email: marco.mangan@pucrs.br
+end note
+
+@enduml
