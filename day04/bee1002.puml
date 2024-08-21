@@ -4,6 +4,9 @@ title Circle Area Calculation
 
 package java.util {
     class Scanner {
+        +Scanner(input: InputStream)
+        +nextDouble(): double
+        +close(): void
     }
 }
 
@@ -13,6 +16,11 @@ package java.lang {
 
     class Math {
         +{static} pow(a: double, b: double): double
+    }
+
+    class System {
+        +{static} in: InputStream
+        +{static} out: PrintStream
     }
 }
 
@@ -31,6 +39,7 @@ Main --> Circle : uses
 Main --> Scanner : uses
 Circle --> IllegalArgumentException : throws
 Circle --> Math : uses
+Main --> System : uses
 
 note as N1
   Date: 2024-08-14
