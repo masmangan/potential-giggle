@@ -27,6 +27,4 @@ POO 2024/II
 
 ## Day 06 ##
 
-![Time1](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day04/bee1002.puml )
-
-
+![Time1](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day06/time1.puml)
