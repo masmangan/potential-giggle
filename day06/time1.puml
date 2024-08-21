@@ -1,0 +1,21 @@
+@startuml
+
+title Time1 from Chapter 8, Deitel & Deitel
+
+class Time1 {
+
+-hour : int
+-minute : int
+-second : int
+
++ setTime(int hour, int minute, int second) : void
++ toUniversalString() : String
++ toString() : String
+
+}
+
+note as N1
+  Date: 2024-08-21
+  Email: marco.mangan@pucrs.br
+end note
+@enduml
