@@ -1,0 +1,166 @@
+@startuml
+
+title java.util - Early Version Overview
+
+package java.util {
+    interface Collection<E> {
+        +boolean add(E o)
+        +boolean addAll(Collection<? extends E> c)
+        +void clear()
+        +boolean contains(Object o)
+        +boolean containsAll(Collection<?> c)
+        +boolean equals(Object o)
+        +int hashCode()
+        +boolean isEmpty()
+        +Iterator<E> iterator()
+        +boolean remove(Object o)
+        +boolean removeAll(Collection<?> c)
+        +boolean retainAll(Collection<?> c)
+        +int size()
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
+    }
+
+    interface List<E> extends Collection<E> {
+        +void add(int index, E element)
+        +boolean add(E element)
+        +boolean addAll(int index, Collection<? extends E> c)
+        +boolean addAll(Collection<? extends E> c)
+        +void clear()
+        +boolean contains(Object o)
+        +boolean containsAll(Collection<?> c)
+        +boolean equals(Object o)
+        +E get(int index)
+        +int hashCode()
+        +int indexOf(Object o)
+        +boolean isEmpty()
+        +Iterator<E> iterator()
+        +int lastIndexOf(Object o)
+        +ListIterator<E> listIterator()
+        +ListIterator<E> listIterator(int index)
+        +E remove(int index)
+        +boolean remove(Object o)
+        +boolean removeAll(Collection<?> c)
+        +boolean retainAll(Collection<?> c)
+        +E set(int index, E element)
+        +int size()
+        +List<E> subList(int fromIndex, int toIndex)
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
+    }
+
+    abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
+        -protected int modCount
+        +AbstractList()
+        +abstract E get(int index)
+        +void add(int index, E element)
+        +boolean add(E element)
+        +boolean addAll(int index, Collection<? extends E> c)
+        +void clear()
+        +boolean equals(Object o)
+        +int hashCode()
+        +int indexOf(Object o)
+        +Iterator<E> iterator()
+        +int lastIndexOf(Object o)
+        +ListIterator<E> listIterator()
+        +ListIterator<E> listIterator(int index)
+        +E remove(int index)
+        +List<E> subList(int fromIndex, int toIndex)
+        #void removeRange(int fromIndex, int toIndex)
+        +E set(int index, E element)
+    }
+
+
+    class ArrayList<E> extends AbstractList<E> implements List<E> {
+        -{static} {final} long serialVersionUID = 8683452581122892189L
+        -{static} {final} int DEFAULT_CAPACITY = 16
+        -int size
+        -transient Object[] data
+        +ArrayList()
+        +ArrayList(initialCapacity: int)
+        +ArrayList(c: Collection<? extends E>)
+        +void trimToSize()
+        +void ensureCapacity(int minCapacity)
+        +int size()
+        +boolean isEmpty()
+        +boolean contains(Object e)
+        +int indexOf(Object e)
+        +int lastIndexOf(Object e)
+        +Object clone()
+        +Object[] toArray()
+        +<T> T[] toArray(T[] a)
+        +E get(int index)
+        +E set(int index, E element)
+        +boolean add(E element)
+        +void add(int index, E element)
+        +E remove(int index)
+        +void clear()
+        +boolean addAll(Collection<? extends E> c)
+        +boolean addAll(int index, Collection<? extends E> c)
+        #void removeRange(int fromIndex, int toIndex)
+        -void checkBoundInclusive(int index)
+        -void checkBoundExclusive(int index)
+        -boolean removeAllInternal(Collection<?> c)
+        -boolean retainAllInternal(Collection<?> c)
+        -void writeObject(ObjectOutputStream s)
+        -void readObject(ObjectInputStream s)
+    }
+
+    class SubList<E> extends AbstractList<E> {
+        -final AbstractList<E> backingList
+        -final int offset
+        -int size
+        +SubList(AbstractList<E> backing, int fromIndex, int toIndex)
+        +int size()
+        +E get(int index)
+        +E set(int index, E element)
+        +void add(int index, E element)
+        +E remove(int index)
+        +boolean addAll(int index, Collection<? extends E> c)
+        +Iterator<E> iterator()
+        +ListIterator<E> listIterator(int index)
+        #void checkMod()
+        -void checkBoundsInclusive(int index)
+        -void checkBoundsExclusive(int index)
+    }
+
+    class RandomAccessSubList<E> extends SubList<E> implements RandomAccess {
+        +RandomAccessSubList(AbstractList<E> backing, int fromIndex, int toIndex)
+    }
+}
+
+package java.io {
+    interface Serializable {
+    }
+    class ObjectOutputStream {
+    }
+    class ObjectInputStream {
+    }
+}
+
+package java.lang.reflect {
+    class Array {
+    }
+}
+
+class Object {
+}
+
+AbstractCollection -up-|> Object
+AbstractList -up-|> AbstractCollection
+AbstractList .up.|> List
+ArrayList -up-|> AbstractList
+ArrayList .up.|> List
+ArrayList .up.|> RandomAccess
+ArrayList .up.|> Cloneable
+ArrayList .up.|> Serializable
+SubList -up-|> AbstractList
+RandomAccessSubList -up-|> SubList
+
+note as N1
+  Early version of java.util.Collection, List, AbstractList, ArrayList,
+  SubList, and RandomAccessSubList from GNU Classpath.
+  Source: opensource.apple.com
+end note
+
+@enduml
