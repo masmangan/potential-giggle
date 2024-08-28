@@ -28,3 +28,9 @@ POO 2024/II
 ## Day 06 ##
 
 ![Time1](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/masmangan/potential-giggle/main/day06/time1.puml)
+
+## Day 07 ##
+
+classe java.util.ArrayList e exemplo da Figura 7.24 ArrayListCollection.
+
+
