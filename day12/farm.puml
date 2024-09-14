@@ -1,5 +1,6 @@
 @startuml
 
+
 class Farm {
   {static} + main(String args) : void
 }
@@ -22,5 +23,6 @@ Animal <.. Farm
 Cat <.. Farm
 Dog <.. Farm
 Duck <.. Farm
+
 
 @enduml
