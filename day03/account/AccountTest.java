@@ -7,7 +7,7 @@ class AccountTest
         Account account1 = new Account("Jane Green", 50.00);
         Account account2 = new Account("John Blue", -7.53);
 
-System.out.printf();
+//System.out.printf();
 
     }
 }
