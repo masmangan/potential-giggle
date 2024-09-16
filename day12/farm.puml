@@ -1,0 +1,28 @@
+@startuml
+
+
+class Farm {
+  {static} + main(String args) : void
+}
+
+abstract class Animal {
+  # name : String
+  {abstract} + talk() : void
+}
+
+class Cat
+class Dog
+class Duck
+
+Animal <|-- Cat
+Animal <|-- Dog
+Animal <|-- Duck
+
+
+Animal <.. Farm
+Cat <.. Farm
+Dog <.. Farm
+Duck <.. Farm
+
+
+@enduml
