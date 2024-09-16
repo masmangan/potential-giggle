@@ -5,12 +5,32 @@ public class Farm {
         //rodolfo.talk();
         //rex.talk();
 
-        Animal[] herd = {new Cat("rodolfo"), 
-                    new Dog("rex"), new Dog("rex")};
-        for (Animal animal : herd) {
-            animal.talk();            
-        }
+        //Animal[] herd = {new Cat("Rodolfo"), 
+        //            new Dog("Rex"), new Duck("Patolino"), new Pig("Pepa")};
+
+        //Radio radio = new Radio("Atlântida");
         
+        //for (Animal animal : herd) {
+        //    animal.talk();          
+        //}
+
+        //radio.talk();
+        
+        Talker[] talkers = {new Cat("Rodolfo"), 
+                    new Dog("Rex"), new Duck("Patolino"), 
+                    new Pig("Pepa"), new Radio("Atlântida")};
+        
+        for (Talker talker : talkers) {
+            if (talker instanceof Radio)
+                System.out.println("Lá vem um rádio!");
+            if (talker instanceof Animal)
+                System.out.println("Lá vem bicho!");
+            talker.talk();          
+        }
+
+
+
+
     }
 
 }

@@ -1,4 +1,4 @@
-public abstract class Animal extends Object {
+public abstract class Animal extends Object implements Talker {
     
     protected String name;
 
