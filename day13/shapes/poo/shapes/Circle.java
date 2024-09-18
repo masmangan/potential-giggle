@@ -1,13 +1,20 @@
 package day13.shapes.poo.shapes;
 
-public class Circle {
-    private int x;
-    private int y;
+public class Circle extends Shape {
+
     private int radius;
 
+    public Circle(int radius) {
+        //this.x = 0;
+        //this.y = 0;
+        //this.radius = radius;
+        this(0, 0, radius);
+    }
+
     public Circle(int x, int y, int radius) {
-        this.x = x;
-        this.y = y;
+        //this.x = x;
+        //this.y = y;
+        super(x, y);
         this.radius = radius;
     }
 
@@ -25,8 +32,13 @@ public class Circle {
         return 2 * Math.PI * radius;
     }
 
-    boolean intersect(Circle c) {
-        // TODO: completar!
+    public boolean intersect(Circle c) {
+        System.out.println("Intersect círculo e círculo");
+        return false;
+    }
+
+    public boolean intersect(Shape c) {
+        System.out.println("Intersect círculo e shape");
         return false;
     }
 }
